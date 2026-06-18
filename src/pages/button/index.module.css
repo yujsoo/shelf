@@ -1,0 +1,30 @@
+.page {
+  min-height: 100vh;
+  padding: 80px 24px 48px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.back {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  color: rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+  z-index: 10;
+}
+
+.back:hover {
+  color: #111;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}

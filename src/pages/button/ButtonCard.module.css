@@ -1,0 +1,53 @@
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  min-height: 160px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.preview:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.codeBtn {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.38);
+  transition: color 0.15s;
+}
+
+.codeBtn:hover {
+  color: #111;
+}
