@@ -1,4 +1,13 @@
-import styles from './GradientButton.module.css'
+import styles from './GradientButton.module.css';
+
+export const hint = {
+  title: 'How it works',
+  steps: [
+    'button에 그라디언트 배경을 입힙니다. padding: 3px이 시각적인 border-width 역할을 합니다.',
+    '내부 <span>이 어두운 단색 배경으로 그라디언트를 덮어, padding 영역만 테두리처럼 노출됩니다.',
+    'hover 시 span의 배경을 제거하면 그라디언트가 전면으로 드러납니다.',
+  ],
+};
 
 export const code = `button {
   align-items: center;
@@ -38,12 +47,12 @@ button:hover span {
 
 button:active {
   transform: scale(0.9);
-}`
+}`;
 
 export default function GradientButton() {
   return (
     <button className={styles.btn} type="button">
-      <span className={styles.btnSpan}>Click me</span>
+      <span className={styles.btnSpan}>Hover me</span>
     </button>
-  )
+  );
 }

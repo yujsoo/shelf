@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom'
-import CodeViewer from '../components/CodeViewer'
-import styles from './ShowcaseLayout.module.css'
+import { Link } from 'react-router-dom';
+import CodeViewer from '../components/CodeViewer';
+import HintCard from '../components/HintCard';
+import styles from './ShowcaseLayout.module.css';
 
-export default function ShowcaseLayout({ children, code, language, header, backTo = '/' }) {
+export default function ShowcaseLayout({ children, code, language, header, hint, backTo = '/' }) {
   return (
     <div className={styles.page}>
       <Link to={backTo} className={styles.back}>← Back</Link>
@@ -11,6 +12,7 @@ export default function ShowcaseLayout({ children, code, language, header, backT
         {children}
       </main>
       <CodeViewer code={code} language={language} />
+      {hint && <HintCard hint={hint} />}
     </div>
-  )
+  );
 }

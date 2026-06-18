@@ -9,7 +9,7 @@ export default function ButtonDetail() {
   if (!btn) return <Navigate to="/button" replace />
 
   return (
-    <ShowcaseLayout code={btn.code} backTo="/button">
+    <ShowcaseLayout code={btn.code} backTo="/button" hint={btn.hint}>
       <btn.Component />
     </ShowcaseLayout>
   )
