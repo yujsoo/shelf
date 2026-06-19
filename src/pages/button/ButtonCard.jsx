@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import styles from './ButtonCard.module.css'
 
-export default function ButtonCard({ id, label, Component, onViewCode }) {
+export default function ButtonCard({ id, label, code, Component, onViewCode }) {
   const navigate = useNavigate()
 
   return (
@@ -11,7 +11,7 @@ export default function ButtonCard({ id, label, Component, onViewCode }) {
       </div>
       <div className={styles.footer}>
         <span className={styles.label}>{label}</span>
-        <button className={styles.codeBtn} type="button" onClick={onViewCode}>
+        <button className={styles.codeBtn} type="button" onClick={() => onViewCode(code)}>
           Code ›
         </button>
       </div>

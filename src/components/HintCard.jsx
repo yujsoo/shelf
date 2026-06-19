@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useIsDesktop } from '../hooks/useIsDesktop';
 import styles from './HintCard.module.css';
 
 export default function HintCard({ hint }) {
   const [open, setOpen] = useState(false);
+  const isDesktop = useIsDesktop();
 
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)');
-    const handler = e => { if (e.matches) setOpen(false); };
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
+    if (isDesktop) setOpen(false);
+  }, [isDesktop]);
 
   return (
     <>

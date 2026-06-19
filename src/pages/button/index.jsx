@@ -17,8 +17,9 @@ export default function ButtonPage() {
             key={btn.id}
             id={btn.id}
             label={btn.label}
+            code={btn.code}
             Component={btn.Component}
-            onViewCode={() => setActiveCode(btn.code)}
+            onViewCode={setActiveCode}
           />
         ))}
       </div>

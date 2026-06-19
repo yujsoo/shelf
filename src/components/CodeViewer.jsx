@@ -1,20 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Highlight, themes } from 'prism-react-renderer';
+import { useIsDesktop } from '../hooks/useIsDesktop';
 import styles from './CodeViewer.module.css';
-
-function useIsDesktop() {
-  const [isDesktop, setIsDesktop] = useState(
-    () => window.matchMedia('(min-width: 768px)').matches
-  );
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)');
-    const handler = e => setIsDesktop(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
-  return isDesktop;
-}
 
 export default function CodeViewer({ code, language = 'css', open: controlledOpen, onClose }) {
   const isControlled = controlledOpen !== undefined;
